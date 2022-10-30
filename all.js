@@ -90,6 +90,13 @@ let data = [
  
 
   addButton.addEventListener("click",function(e){
+  const imageUrl=document.querySelector(".imageUrl");
+  const ticketLevel=document.querySelector(".ticketLevel");
+    if(tickerName.value==""|| imageUrl.value==""||ticketLocation.value==""||ticketPrice.value==""||ticketNum.value==""||ticketLevel.value==""||ticketDescription.value==""){
+        alert("尚有欄位未填寫!");
+        return;
+    }
+    
 
     let obj={};
     obj.name=tickerName.value;
