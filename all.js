@@ -92,8 +92,28 @@ let data = [
   addButton.addEventListener("click",function(e){
   const imageUrl=document.querySelector(".imageUrl");
   const ticketLevel=document.querySelector(".ticketLevel");
+     //判斷是否為空值
     if(tickerName.value==""|| imageUrl.value==""||ticketLocation.value==""||ticketPrice.value==""||ticketNum.value==""||ticketLevel.value==""||ticketDescription.value==""){
         alert("尚有欄位未填寫!");
+        return;
+    }
+
+    //判斷是否為數值
+    if(isNaN(ticketPrice.value)){
+        alert("套票金額需填寫數值");
+        return;
+    }else if(isNaN(ticketNum.value)){
+        alert("套票組數需填寫數值");
+        return;
+    }else if(isNaN(ticketLevel.value)){
+        alert("套票星級需填寫數值");
+        return;
+    }
+
+    //星級區間驗證
+    if(ticketLevel.value<1||ticketLevel.value>10){
+
+        alert("套票星級區間為1-10分");
         return;
     }
     
